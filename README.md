@@ -6,6 +6,11 @@ Shell-script for converting multiple files in a directory with FFmpeg.
 
 + [FFmpeg](https://ffmpeg.org/)
 
+## Installation
+
++ get the script (`convdir.sh`)
++ make it executable (`chmod +x PATH_TO_SCRIPT`)
+
 ## Usage
 
 Options:
