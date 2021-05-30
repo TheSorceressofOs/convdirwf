@@ -24,7 +24,11 @@ case $1 in
 				# converting with FFmpeg
 				for i in *."$from";
 				do name="$(echo "$i" | awk -F "." 'sub(FS $NF,x)')"
-  					printf "\n\n########################################\n\nconverting file: $name\n\n########################################\n\n"
+					ROW="$(for n in $(seq $(echo $name | wc -c)); do
+        				printf "#"
+					done
+					)"
+					printf "\n\n##$ROW#\n# $name #\n##$ROW#\n\n"
   					ffmpeg -i "$i" "${name}.$to"
 				done
 
@@ -34,7 +38,7 @@ case $1 in
 						notify-send -t -1 "CONVDIR" "converted all $count files"
 						;;
 					*)
-						printf "\n\nconverted all $count files\n\n"
+						printf "converted all $count files"
 						;;
 				esac
 			
